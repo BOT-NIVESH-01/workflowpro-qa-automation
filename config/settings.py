@@ -1,1 +1,5 @@
-"""Central settings placeholder for framework defaults."""
+BASE_URL
+BROWSER
+HEADLESS
+TIMEOUT
+ENVIRONMENT
