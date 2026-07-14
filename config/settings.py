@@ -1,0 +1,1 @@
+"""Central settings placeholder for framework defaults."""

@@ -1,0 +1,1 @@
+"""Placeholder smoke test module."""
