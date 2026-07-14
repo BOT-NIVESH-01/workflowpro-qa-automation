@@ -1,1 +1,0 @@
-"""Placeholder project creation test module."""

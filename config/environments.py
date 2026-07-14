@@ -1,1 +1,0 @@
-"""Environment mapping placeholder for multi-environment execution."""
