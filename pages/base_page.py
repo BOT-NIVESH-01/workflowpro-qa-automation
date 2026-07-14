@@ -50,4 +50,5 @@ class BasePage:
             path=f"reports/screenshots/{name}.png"
         )
     def wait_for_load(self):
+        """Wait until the page reaches a stable network state."""
         self.page.wait_for_load_state("networkidle")

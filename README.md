@@ -8,11 +8,6 @@ The framework demonstrates industry-standard automation practices using **Python
 
 ---
 
-> **Assessment Note**
->
-> This repository demonstrates the design of a production-ready QA Automation framework for the fictional **WorkflowPro** SaaS platform described in the assessment.
->
-> Only the smoke test executes against a public website (`https://example.com`) to validate the framework configuration. Other tests illustrate the framework design and require a deployed WorkflowPro environment.
 
 > **Note**
 >
