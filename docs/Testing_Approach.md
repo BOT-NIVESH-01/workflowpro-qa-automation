@@ -2,28 +2,74 @@
 
 ## Framework Architecture
 
-The automation framework follows the Page Object Model (POM) to separate test logic from UI interactions. This improves maintainability and reduces code duplication.
+The automation framework follows the **Page Object Model (POM)** design pattern to separate UI interactions from test logic. Common browser operations are implemented in a reusable `BasePage`, while application-specific functionality is encapsulated within individual page objects. This improves maintainability, readability, and scalability as the application grows.
 
-## UI Testing
+---
 
-UI automation is implemented using Playwright. Browser interactions are encapsulated in reusable page objects while Pytest fixtures manage browser lifecycle.
+## UI Testing Strategy
 
-## API Testing
+UI automation is implemented using **Playwright** with **Pytest**. Browser lifecycle management is handled through reusable fixtures defined in `conftest.py`. Explicit waits and Playwright's web-first assertions are used to reduce flaky test failures caused by dynamic loading.
 
-API tests use a reusable client built on the Requests library. The client supports GET, POST, PUT, and DELETE operations and can be extended with authentication.
+---
+
+## API Testing Strategy
+
+The framework includes a reusable API client built using the `requests` library. API calls are used for test setup and cleanup whenever possible to reduce execution time and improve reliability. Business operations such as project creation are encapsulated in dedicated API wrapper classes.
+
+---
+
+## API + UI Integration Strategy
+
+The preferred testing strategy is:
+
+1. Create required data through REST APIs.
+2. Validate business functionality through the Web UI.
+3. Execute the same validation on supported mobile platforms using BrowserStack.
+4. Verify tenant isolation by logging into another tenant and confirming that resources are inaccessible.
+
+Using APIs for setup significantly reduces execution time compared to creating data through the UI.
+
+---
 
 ## Test Data Management
 
-Test data is stored in JSON files under the `data/` directory to avoid hardcoding values inside test scripts.
+Test data is stored separately from test scripts using JSON files under the `data/` directory. Different users, roles, and tenant information can be maintained independently without modifying automation code.
+
+Dynamic data such as project names should be generated using UUIDs to avoid collisions during parallel execution.
+
+---
+
+## Cross-Platform Testing
+
+The framework is designed to support:
+
+- Chromium
+- Firefox
+- WebKit (Safari)
+- Android devices
+- iOS devices
+
+Cross-browser and mobile execution can be performed through BrowserStack without modifying the test scripts.
+
+---
 
 ## Reporting
 
-HTML reports are generated using `pytest-html`. Logs are written to the `reports/logs` directory.
+The framework generates HTML reports using `pytest-html`. Execution logs are stored under the `reports/logs` directory. Screenshots can be captured automatically for failed tests to simplify debugging.
+
+---
 
 ## Continuous Integration
 
-The framework is configured to run automatically through GitHub Actions on every push and pull request.
+GitHub Actions is used to execute the automation suite automatically on every push and pull request. This enables continuous validation and early defect detection.
+
+---
 
 ## Assumptions
 
-WorkflowPro is a fictional application used to demonstrate framework design. Only the smoke test executes against a public website.
+Since WorkflowPro is a fictional application used for this assessment:
+
+- URLs are illustrative.
+- Authentication is assumed.
+- BrowserStack execution is represented conceptually.
+- API endpoints follow the specification provided in the assessment.

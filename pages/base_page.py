@@ -49,3 +49,5 @@ class BasePage:
         self.page.screenshot(
             path=f"reports/screenshots/{name}.png"
         )
+    def wait_for_load(self):
+        self.page.wait_for_load_state("networkidle")

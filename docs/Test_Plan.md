@@ -120,3 +120,19 @@ This repository includes:
 - Testing Approach
 - HTML Reports
 - README Documentation
+
+---
+
+# Missing Requirements / Clarifications
+
+The following information would be requested before implementing the framework in a production environment:
+
+- How should 2FA authentication be handled?
+- Should test data be cleaned after every execution?
+- Is tenant isolation implemented using separate databases or schemas?
+- What reporting tool is preferred (Allure, ReportPortal, TestRail)?
+- What is the required level of parallel execution?
+- What BrowserStack concurrency license is available?
+- Are mobile tests executed against native applications or responsive web applications?
+- How are API authentication tokens generated and refreshed?
+- Should visual testing or accessibility testing be included?

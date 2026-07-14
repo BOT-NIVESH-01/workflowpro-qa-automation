@@ -5,12 +5,19 @@ from pages.login_page import LoginPage
 
 @pytest.mark.ui
 @pytest.mark.skip(
-    reason="WorkflowPro is a fictional application. This test demonstrates framework design only."
+    reason="Framework demonstration. Execution requires a deployed WorkflowPro environment."
 )
 def test_valid_login(page):
+    """
+    Demonstrates login automation using
+    the Page Object Model.
+    """
+
     login_page = LoginPage(page)
 
-    login_page.goto("https://app.workflowpro.com/login")
+    login_page.goto(
+        "https://app.workflowpro.com/login"
+    )
 
     login_page.login(
         "admin@company1.com",

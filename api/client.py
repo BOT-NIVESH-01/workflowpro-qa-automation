@@ -9,9 +9,12 @@ class APIClient:
         self.base_url = BASE_URL
         self.session = requests.Session()
 
-        self.session.headers.update({
-            "Content-Type": "application/json"
-        })
+        self.session.headers.update(
+    {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    }
+)
 
     def get(self, endpoint):
         return self.session.get(

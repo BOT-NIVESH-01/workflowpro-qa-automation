@@ -8,6 +8,12 @@ The framework demonstrates industry-standard automation practices using **Python
 
 ---
 
+> **Assessment Note**
+>
+> This repository demonstrates the design of a production-ready QA Automation framework for the fictional **WorkflowPro** SaaS platform described in the assessment.
+>
+> Only the smoke test executes against a public website (`https://example.com`) to validate the framework configuration. Other tests illustrate the framework design and require a deployed WorkflowPro environment.
+
 > **Note**
 >
 > WorkflowPro is a fictional SaaS application used as part of a QA Automation design assessment.
@@ -108,6 +114,17 @@ reports/html/
 The framework follows the **Page Object Model (POM)** to improve maintainability, readability, and scalability.
 
 ---
+
+## Future Enhancements
+
+The framework is designed to support additional capabilities such as:
+
+- BrowserStack integration for cross-browser and mobile execution
+- Parallel test execution
+- Automatic screenshot capture on failures
+- Playwright tracing
+- Allure reporting
+- Docker-based execution
 
 ## Author
 

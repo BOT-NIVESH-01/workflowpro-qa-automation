@@ -7,14 +7,26 @@ from pages.login_page import LoginPage
 
 @pytest.mark.integration
 @pytest.mark.skip(
-    reason="WorkflowPro is a fictional application. This test demonstrates API + UI integration design."
+    reason="Framework demonstration. Execution requires a deployed WorkflowPro environment."
 )
 def test_project_creation_api_ui(page):
+    """
+    Business Flow
+
+    1. Create project using REST API.
+    2. Login through Web UI.
+    3. Verify project appears on dashboard.
+    4. Execute same validation on BrowserStack mobile devices.
+    5. Login as another tenant.
+    6. Verify tenant isolation.
+    """
+
     api = ProjectAPI()
 
-    # Example API setup
+    # Step 1: Create project
     api.create_project("Automation Demo")
 
+    # Step 2: Login
     login = LoginPage(page)
 
     login.goto("https://app.workflowpro.com/login")
@@ -24,6 +36,13 @@ def test_project_creation_api_ui(page):
         "password123"
     )
 
+    # Step 3: Verify dashboard
     dashboard = DashboardPage(page)
+
+    # Future enhancement:
+    # Validate project visibility on BrowserStack Android/iOS.
+
+    # Future enhancement:
+    # Login using Company2 and verify project is not visible.
 
     assert dashboard is not None
