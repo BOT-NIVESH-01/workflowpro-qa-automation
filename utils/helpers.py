@@ -1,7 +1,6 @@
-"""General helper utility placeholder."""
+import json
 
 
-def noop(*args, **kwargs):
-    """Placeholder helper function."""
-
-    pass
+def load_json(path):
+    with open(path, "r", encoding="utf-8") as file:
+        return json.load(file)
