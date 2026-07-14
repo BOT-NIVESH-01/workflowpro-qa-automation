@@ -2,7 +2,7 @@ BASE_URL = "https://app.workflowpro.com"
 
 BROWSER = "chromium"
 
-HEADLESS = True
+HEADLESS = False
 
 TIMEOUT = 30000
 
