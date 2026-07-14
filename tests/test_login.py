@@ -1,6 +1,12 @@
+import pytest
+
 from pages.login_page import LoginPage
 
 
+@pytest.mark.ui
+@pytest.mark.skip(
+    reason="WorkflowPro is a fictional application. This test demonstrates framework design only."
+)
 def test_valid_login(page):
     login_page = LoginPage(page)
 
@@ -11,6 +17,4 @@ def test_valid_login(page):
         "password123"
     )
 
-    # Since WorkflowPro is fictional,
-    # we're just demonstrating the framework.
-    assert True
+    assert login_page is not None
