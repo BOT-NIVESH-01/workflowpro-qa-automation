@@ -1,27 +1,37 @@
 import pytest
 from playwright.sync_api import sync_playwright
+
 from config.settings import HEADLESS
 
 
 @pytest.fixture(scope="session")
 def playwright():
-    with sync_playwright() as p:
-        yield p
+    with sync_playwright() as playwright:
+        yield playwright
 
 
 @pytest.fixture(scope="session")
 def browser(playwright):
-    browser = playwright.chromium.launch(headless=HEADLESS)
+    browser = playwright.chromium.launch(
+        headless=HEADLESS
+    )
+
     yield browser
+
     browser.close()
 
 
 @pytest.fixture(scope="function")
-def page(browser):
+def context(browser):
     context = browser.new_context()
 
+    yield context
+
+    context.close()
+
+
+@pytest.fixture(scope="function")
+def page(context):
     page = context.new_page()
 
     yield page
-
-    context.close()
