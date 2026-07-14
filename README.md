@@ -8,6 +8,13 @@ The framework demonstrates industry-standard automation practices using **Python
 
 ---
 
+> **Note**
+>
+> WorkflowPro is a fictional SaaS application used as part of a QA Automation design assessment.
+> The automation framework demonstrates how UI, API, and integration tests would be structured in a production environment.
+> Only the smoke test executes against a real public website (`https://example.com`) to verify the framework setup.
+
+
 ## Features
 
 - UI Automation using Playwright
@@ -101,12 +108,6 @@ reports/html/
 The framework follows the **Page Object Model (POM)** to improve maintainability, readability, and scalability.
 
 ---
-
-> **Note**
->
-> WorkflowPro is a fictional SaaS application used as part of a QA Automation design assessment.
-> The automation framework demonstrates how UI, API, and integration tests would be structured in a production environment.
-> Only the smoke test executes against a real public website (`https://example.com`) to verify the framework setup.
 
 ## Author
 
