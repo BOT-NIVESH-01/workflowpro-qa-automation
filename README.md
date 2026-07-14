@@ -1,22 +1,107 @@
-# workflowpro-qa-automation
+# WorkflowPro QA Automation Framework
 
 ## Overview
 
-Production-ready QA automation framework skeleton for UI, API, and integration testing.
+This repository contains a sample QA Automation Framework designed for a fictional B2B SaaS application called **WorkflowPro**.
 
-## Tech Stack
+The framework demonstrates industry-standard automation practices using **Python**, **Pytest**, **Playwright**, and the **Page Object Model (POM)**.
 
-- Python 3.12
-- Pytest
+---
+
+## Features
+
+- UI Automation using Playwright
+- API Testing using Requests
+- Page Object Model (POM)
+- Pytest Fixtures
+- HTML Test Reports
+- JSON Test Data
+- Multi-environment Configuration
+- GitHub Actions Ready
+
+---
+
+## Project Structure
+
+```text
+workflowpro-qa-automation/
+
+api/
+config/
+data/
+docs/
+pages/
+reports/
+tests/
+utils/
+```
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/<username>/workflowpro-qa-automation.git
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Install Playwright browsers
+
+```bash
+python -m playwright install
+```
+
+---
+
+## Run Tests
+
+Run all tests
+
+```bash
+pytest
+```
+
+Run a specific test
+
+```bash
+pytest tests/test_smoke.py
+```
+
+---
+
+## Reports
+
+HTML reports are generated inside
+
+```
+reports/html/
+```
+
+---
+
+## Technologies
+
+- Python
 - Playwright
+- Pytest
 - Requests
-- Page Object Model
-- GitHub Actions
+- pytest-html
 
-## Project Status
+---
 
-This repository currently contains the folder structure and placeholder files only.
+## Design Pattern
 
-## Structure
+The framework follows the **Page Object Model (POM)** to improve maintainability, readability, and scalability.
 
-The repository is organized to support multi-environment execution, cross-browser testing, reusable page objects, API client abstractions, and HTML reporting.
+---
+
+## Author
+
+K. Nivesh Chowdary
